@@ -52,6 +52,7 @@ const functions = {
                             console.log("[ChristCentered Economy]: (Error) Error clearing logs file.");
                     });
 
+                    // send the message
                     const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());
                     embed.args["description"] = "Cleared logs file. :white_check_mark:";
                     interaction.channel.send({ embeds: [embed.get()] });

@@ -29,6 +29,7 @@ const functions = {
 
         const dropdown = new MessageActionRow().addComponents(selection);
         
+        // send the message
         msg.channel.send({
             embeds: [embed.get()],
             components: [dropdown]
