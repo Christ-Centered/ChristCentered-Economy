@@ -6,7 +6,14 @@ const Utils = require("../utils/Utils.js");
 
 // functions
 const functions = {
-    NoArgs: function(msg) {
+    name: "help",
+    Execute(msg, args) {
+        // check the argument length & return the proper version of the command
+        if (args.length == 0) this.noArgs(msg);
+        else this.yesArgs(msg, args);
+    },
+
+    noArgs: function(msg) {
         // create the main help menu embed
         const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());
         
@@ -47,10 +54,10 @@ const functions = {
         );
     },
 
-    YesArgs: function(msg, args) {
+    yesArgs: function(msg, args) {
         // check args length
         if (args.length !== 1) {
-            this.NoArgs(msg);
+            this.noArgs(msg);
             return;
         }
 
@@ -70,7 +77,7 @@ const functions = {
         ];
 
         if (!validArgs.includes(selection)) {
-            this.NoArgs(msg);
+            this.noArgs(msg);
             return;
         }
 
@@ -127,12 +134,6 @@ const functions = {
         }
 
         return embed;
-    },
-
-    Execute: function(msg, args) {
-        // check the argument length & return the proper version of the command
-        if (args.length == 0) this.NoArgs(msg);
-        else this.YesArgs(msg, args);
     }
 }
 

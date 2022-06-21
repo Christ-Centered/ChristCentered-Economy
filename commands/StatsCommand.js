@@ -6,21 +6,22 @@ const Utils = require("../utils/Utils.js");
 
 // functions
 const functions = {
-    Execute: function(msg, args) {
+    name: "stats",
+    Execute(msg, args) {
         // create embed
         const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());
 
         // check argument length
         if (args.length !== 1) {
             embed.args["description"] = "Incorrect Usage! `!stats <user>`";
-            msg.channel.send({ embeds: [errorEmbed.get()] });
+            msg.channel.send({ embeds: [embed.get()] });
             return;
         }
 
         // check if argument is a mention
         if (!msg.mentions.members.first()) {
             embed.args["description"] = "User must be a mention!";
-            msg.channel.send({ embeds: [errorEmbed.get()] });
+            msg.channel.send({ embeds: [embed.get()] });
             return;
         }
 

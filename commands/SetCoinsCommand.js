@@ -6,7 +6,8 @@ const Utils = require("../utils/Utils.js");
 
 // functions
 const functions = {
-    Execute: function(msg, args) {
+    name: "setcoins",
+    Execute(msg, args) {
         // create author user profile
         const authorProfile = new User(msg.author.id);
 

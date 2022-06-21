@@ -1,14 +1,22 @@
 // require
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, DiscordAPIError, Collection } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const Utils = require("./utils/Utils.js");
-
 const Config = require("./config/Config.js");
 
+const fs = require("fs");
 const HelpCommand = require("./commands/HelpCommand.js");
-const StatsCommand = require("./commands/StatsCommand.js");
-const SetCoinsCommand = require("./commands/SetCoinsCommand.js");
+
+// setup commands
+const commandsList = new Collection();
+const commandFiles = fs.readdirSync("./commands/").filter(file => file.endsWith(".js"));
+
+for (const file of commandFiles) {
+    const command = require(`./commands/` + file);
+    commandsList.set(command.name, command);
+}
+
 
 // startup function
 client.once("ready", () => {
@@ -16,10 +24,17 @@ client.once("ready", () => {
     Utils.logMessage("ChristCentered Economy v1.0 is loading...");
 
     // set bot profile
-    client.user.setStatus("online");
-    client.user.setActivity("The Gospel.", {type: "LISTENING"});
+    const presence = {
+        status: "online",
+        activity: {
+            type: "LISTENING",
+            name: "The Gospel."
+        }
+    };
+
+    client.user.setPresence(presence);
     // loop setting the status message
-    setInterval(() => { client.user.setActivity("The Gospel.", {type: "LISTENING"}); }, 5000 * 60);
+    setInterval(() => client.user.setPresence(presence), 5000 * 60);
 
     // send completion message
     Utils.logMessage("ChristCentered Economy v1.0 has successfully loaded.");
@@ -45,30 +60,22 @@ client.on("messageCreate", (msg) => {
     if (msg.content.startsWith(prefix)) {
         // create command & arguments
         const args = msg.content.slice(1).trim().split(" ");
-        const command = args.shift().toLowerCase();
+        const commandName = args.shift().toLowerCase();
 
         // create executor variables
         const guild = msg.guild;
         const username = msg.author.username;
 
-        // check what the command was
-        switch (command) {
-            case "helpdev":
-                HelpCommand.Execute(msg, args);
-                break;
-            case "statsdev":
-                StatsCommand.Execute(msg, args);
-                break;
-            case "setcoins":
-                SetCoinsCommand.Execute(msg, args);
-                break;
-        }
+        // execute the command
+        const command = commandsList.get(`${commandName}`);
+
+        if (!command) return;
+
+        command.Execute(msg, args);
 
         // log message to console
-        const commands = config.Commands;
-
-        if (commands.includes(command))
-            Utils.logMessage("[" + guild.name + "], " + username + " has run a command: " + command);
+        if (commandsList.has(commandName))
+            Utils.logMessage("[" + guild.name + "], " + username + " has run a command: " + commandName);
     }
 });
 
