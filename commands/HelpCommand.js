@@ -1,31 +1,26 @@
 //require
 const { MessageActionRow, MessageSelectMenu } = require("discord.js");
+const CustomEmbed = require("../utils/CustomEmbed.js");
 
-const utils = require("../utils/utils.js");
+const Utils = require("../utils/Utils.js");
 
 // functions
 const functions = {
     NoArgs: function(msg) {
         // create the main help menu embed
-        const embed = utils.customEmbed({
-            color: "AQUA",
-            author: {
-                name: "ChristCentered Economy Help",
-                url: "",
-                iconURL: "https://cdn.discordapp.com/attachments/758680334698414081/988454409912606750/CCLogo.gif"
-            },
-            fields: [
-                {name: "Commands", value: "`!help commands`", inline: true},
-                {name: "Stats", value: "`!help stats`", inline: true},
-                {name: "Shop", value: "`!help shop`", inline: true},
-                {name: "Mini-games", value: "`!help minigames`", inline: true},
-                {name: "Gambling", value: "`!help gambling`", inline: true},
-                {name: "Work", value: "`!help work`", inline: true},
-                {name: "Trade", value: "`!help trade`", inline: true},
-                {name: "Rob", value: "`!help rob`", inline: true},    
-            ]
-        });
-
+        const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());
+        
+        embed.args["fields"] = [
+            {name: "Commands", value: "`!help commands`", inline: true},
+            {name: "Stats", value: "`!help stats`", inline: true},
+            {name: "Shop", value: "`!help shop`", inline: true},
+            {name: "Mini-games", value: "`!help minigames`", inline: true},
+            {name: "Gambling", value: "`!help gambling`", inline: true},
+            {name: "Work", value: "`!help work`", inline: true},
+            {name: "Trade", value: "`!help trade`", inline: true},
+            {name: "Rob", value: "`!help rob`", inline: true},    
+        ]
+    
         // create dropdow menu
         const selection = new MessageSelectMenu();
         selection.setCustomId("help-dropdown");
@@ -46,7 +41,7 @@ const functions = {
         // send the message embed with the dropdown menu
         msg.channel.send(
             { 
-                embeds: [embed],
+                embeds: [embed.get()],
                 components: [dropdown]
             }
         );
@@ -79,67 +74,58 @@ const functions = {
             return;
         }
 
-        // give help for selection
+        // get help for selection
         const embed = this.getHelpEmbed(selection);
 
         // send the message
-        msg.channel.send({ embeds: [embed] });
+        msg.channel.send({ embeds: [embed.get()] });
     },
 
     getHelpEmbed: function(selection) {
         // set up initial embed content
-        var embedContent = {
-            color: "AQUA",
-            author: {
-                name: "ChristCentered Economy Help",
-                url: "",
-                iconURL: "https://cdn.discordapp.com/attachments/758680334698414081/988454409912606750/CCLogo.gif"
-            },
-        };
+        const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());
 
         // add different descriptions, titles & fields based off of the selection
         switch (selection) {
             case "commands":
-                embedContent["title"] = "-- Commands";
-                embedContent["description"] = "```yaml\n!helpdev: Send the help message\n```";
+                embed.args["title"] = "-- Commands";
+                embed.args["description"] = "```yaml\n!helpdev: Send the help message\n```";
                 break;
             case "stats":
-                embedContent["title"] = "-- Stats";
-                embedContent["description"] = "Every user's economy statistics are stored as data. You may check your own, or another user's stats by typing `!stats <user>`. (Make sure you ping them)";
+                embed.args["title"] = "-- Stats";
+                embed.args["description"] = "Every user's economy statistics are stored as data. You may check your own, or another user's stats by typing `!stats <user>`. (Make sure you ping them)";
                 break;
             case "shop":
-                embedContent["title"] = "-- Shop";
-                embedContent["description"] = "In the shop you are able to buy different roles, prizes, and other things with coins. You can access the shop by typing `!shop`.";
+                embed.args["title"] = "-- Shop";
+                embed.args["description"] = "In the shop you are able to buy different roles, prizes, and other things with coins. You can access the shop by typing `!shop`.";
                 break;
             case "minigames":
-                embedContent["title"] = "-- Mini-games";
-                embedContent["description"] = ":warning: **In Development** :warning:";
-                embedContent["fields"] = [
+                embed.args["title"] = "-- Mini-games";
+                embed.args["description"] = ":warning: **In Development** :warning:";
+                embed.args["fields"] = [
                     {name: "#1", value: "`<information>`", inline: true},
                     {name: "#2", value: "`<information>`", inline: true},
                     {name: "#3", value: "`<information>`", inline: true},
                 ];
                 break;
             case "gambling":
-                embedContent["title"] = "-- Gambling";
-                embedContent["description"] = "Gamble your money and life away with `!<whatever the command will be>`. Just make sure not to overdo it :)";
+                embed.args["title"] = "-- Gambling";
+                embed.args["description"] = "Gamble your money and life away with `!<whatever the command will be>`. Just make sure not to overdo it :)";
                 break;
             case "work":
-                embedContent["title"] = "-- Work";
-                embedContent["description"] = "Use `!work` in frequent intervals to gain more coins."
+                embed.args["title"] = "-- Work";
+                embed.args["description"] = "Use `!work` in frequent intervals to gain more coins."
                 break;
             case "trade":
-                embedContent["title"] = "-- Trade";
-                embedContent["description"] = "Use the `!trade` command to trade things with other people. I don't know, Augustine hasn't told me how this would work :joy:\n- Yochran"
+                embed.args["title"] = "-- Trade";
+                embed.args["description"] = "Use the `!trade` command to trade things with other people. I don't know, Augustine hasn't told me how this would work :joy:\n- Yochran"
                 break;
             case "rob":
-                embedContent["title"] = "-- Rob";
-                embedContent["description"] = "If you're in need of a quick buck, type `!rob <user>` for a chance to steal some money."
+                embed.args["title"] = "-- Rob";
+                embed.args["description"] = "If you're in need of a quick buck, type `!rob <user>` for a chance to steal some money."
                 break;
         }
 
-        // create the embed
-        const embed = utils.customEmbed(embedContent);
         return embed;
     },
 

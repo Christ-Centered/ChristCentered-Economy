@@ -2,17 +2,18 @@
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
-const utils = require("./utils/utils.js");
+const Utils = require("./utils/Utils.js");
 
-const prefix = utils.getPrefix();
-const commands = utils.getCommands();
+const Config = require("./config/Config.js");
 
 const HelpCommand = require("./commands/HelpCommand.js");
+const StatsCommand = require("./commands/StatsCommand.js");
+const SetCoinsCommand = require("./commands/SetCoinsCommand.js");
 
 // startup function
 client.once("ready", () => {
     // send startup message
-    utils.logMessage("ChristCentered Economy v1.0 is loading...");
+    Utils.logMessage("ChristCentered Economy v1.0 is loading...");
 
     // set bot profile
     client.user.setStatus("online");
@@ -21,7 +22,7 @@ client.once("ready", () => {
     setInterval(() => { client.user.setActivity("The Gospel.", {type: "LISTENING"}); }, 5000 * 60);
 
     // send completion message
-    utils.logMessage("ChristCentered Economy v1.0 has successfully loaded.");
+    Utils.logMessage("ChristCentered Economy v1.0 has successfully loaded.");
 });
 
 // message listener
@@ -31,11 +32,16 @@ client.on("messageCreate", (msg) => {
 
     // if message was a DM
     if (!msg.guild) {
-        utils.logMessage("Received a DM from " + msg.author.tag + ": " + msg.content);
+        Utils.logMessage("Received a DM from " + msg.author.tag + ": " + msg.content);
         return;
     }
 
+    // define config file 
+    const config = Config.getConfig("config.json");
+
     // check if message was a command
+    const prefix = config.Prefix;
+
     if (msg.content.startsWith(prefix)) {
         // create command & arguments
         const args = msg.content.slice(1).trim().split(" ");
@@ -50,10 +56,19 @@ client.on("messageCreate", (msg) => {
             case "helpdev":
                 HelpCommand.Execute(msg, args);
                 break;
+            case "statsdev":
+                StatsCommand.Execute(msg, args);
+                break;
+            case "setcoins":
+                SetCoinsCommand.Execute(msg, args);
+                break;
         }
 
+        // log message to console
+        const commands = config.Commands;
+
         if (commands.includes(command))
-            utils.logMessage("[" + guild.name + "], " + username + " has run a command: " + command);
+            Utils.logMessage("[" + guild.name + "], " + username + " has run a command: " + command);
     }
 });
 
@@ -70,9 +85,9 @@ client.on("interactionCreate", async (interaction) => {
 
     // send the message & delete help hub
     interaction.message.delete(1000);
-    interaction.channel.send({ embeds: [embed] });
+    interaction.channel.send({ embeds: [embed.get()] });
 });
 
 // log in the bot
-const token = utils.getToken();
+const token = Config.getConfig("config.json").Token;
 client.login(token);
