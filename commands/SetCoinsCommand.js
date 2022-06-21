@@ -7,6 +7,7 @@ const Utils = require("../utils/Utils.js");
 // functions
 const functions = {
     name: "setcoins",
+    alias: [],
     Execute(msg, args) {
         // create author user profile
         const authorProfile = new User(msg.author.id);
@@ -42,6 +43,10 @@ const functions = {
         // create user profile
         const user = msg.mentions.members.first();
         const userProfile = new User(user.id);
+
+        // check for initialization
+        if (!userProfile.isInitialized())
+            userProfile.initialize();
 
         // set the users new coins value
         userProfile.setCoins(parseInt(amount));

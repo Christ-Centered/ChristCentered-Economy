@@ -7,6 +7,7 @@ const Utils = require("../utils/Utils.js");
 // functions
 const functions = {
     name: "help",
+    alias: ["helpecon"],
     Execute(msg, args) {
         // check the argument length & return the proper version of the command
         if (args.length == 0) this.noArgs(msg);

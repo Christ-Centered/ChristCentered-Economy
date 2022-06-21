@@ -1,22 +1,22 @@
 // require
-const { Client, Intents, DiscordAPIError, Collection } = require('discord.js');
+const { Client, Intents, Collection } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const Utils = require("./utils/Utils.js");
 const Config = require("./config/Config.js");
 
 const fs = require("fs");
+
 const HelpCommand = require("./commands/HelpCommand.js");
+const ShopCommand = require("./commands/ShopCommand.js");
 
 // setup commands
+const CommandManager = require("./managers/CommandManager.js");
+
 const commandsList = new Collection();
 const commandFiles = fs.readdirSync("./commands/").filter(file => file.endsWith(".js"));
 
-for (const file of commandFiles) {
-    const command = require(`./commands/` + file);
-    commandsList.set(command.name, command);
-}
-
+CommandManager.initializeCommands(commandsList, commandFiles);
 
 // startup function
 client.once("ready", () => {
@@ -57,26 +57,28 @@ client.on("messageCreate", (msg) => {
     // check if message was a command
     const prefix = config.Prefix;
 
-    if (msg.content.startsWith(prefix)) {
-        // create command & arguments
-        const args = msg.content.slice(1).trim().split(" ");
-        const commandName = args.shift().toLowerCase();
+    if (!msg.content.startsWith(prefix)) return;
 
-        // create executor variables
-        const guild = msg.guild;
-        const username = msg.author.username;
-
-        // execute the command
-        const command = commandsList.get(`${commandName}`);
-
-        if (!command) return;
-
-        command.Execute(msg, args);
-
-        // log message to console
-        if (commandsList.has(commandName))
-            Utils.logMessage("[" + guild.name + "], " + username + " has run a command: " + commandName);
-    }
+    // create command & arguments
+    const args = msg.content.slice(1).trim().split(" ");
+    const commandName = args.shift().toLowerCase();
+    
+    // create executor variables
+    const guild = msg.guild;
+    const username = msg.author.username;
+    
+    // get the command
+    const command = CommandManager.getCommand(commandsList, commandName);
+    
+    // check if command is null
+    if (!command) return;
+    
+    // execute the command
+    command.Execute(msg, args);
+    
+    // log message to console
+    if (commandsList.has(command.name))
+        Utils.logMessage("[" + guild.name + "], " + username + " has run a command: " + commandName);
 });
 
 // dropdown interaction listener
@@ -84,13 +86,23 @@ client.on("interactionCreate", async (interaction) => {
     // make sure interaction is from a dropdown
     if (!interaction.isSelectMenu()) return;
 
+    // define embed variable to send
+    var embed;
+    
     // define the selection
     const selection = interaction.values[0];
 
-    // get the embed
-    const embed = HelpCommand.getHelpEmbed(selection);
+    // check which dropdown they clicked
+    switch (interaction.customId) {
+        case "help-dropdown":
+            embed = HelpCommand.getHelpEmbed(selection);
+            break;
+        case "shop-dropdown":
+            embed = ShopCommand.getShopEmbed(selection);
+            break;
+    }
 
-    // send the message & delete help hub
+    // send the message & delete message hub
     interaction.message.delete(1000);
     interaction.channel.send({ embeds: [embed.get()] });
 });

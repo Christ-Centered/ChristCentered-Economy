@@ -7,9 +7,14 @@ const Utils = require("../utils/Utils.js");
 // functions
 const functions = {
     name: "stats",
+    alias: ["coins"],
     Execute(msg, args) {
         // create embed
         const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());
+
+        // check if author has permission
+        const authorProfile = new User(msg.author.id);
+        if (!authorProfile.isOpped()) return;
 
         // check argument length
         if (args.length !== 1) {
@@ -28,6 +33,10 @@ const functions = {
         // create user profile
         const user = msg.mentions.members.first();
         const userProfile = new User(user.id);
+
+        // check for initialization
+        if (!userProfile.isInitialized())
+            userProfile.initialize();
 
         // get users coins
         const coins = userProfile.getCoins();

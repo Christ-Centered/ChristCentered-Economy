@@ -14,6 +14,31 @@ class User {
         this.id = id;
     }
 
+    // checks if user is initialized
+    isInitialized() {
+        const exists = stats[this.id];
+        if (!exists) return false;
+
+        return true;
+    }
+
+    // initialize user
+    initialize() {
+        // setup temp profile
+        stats.NewUser = {
+            Coins: 0
+        };
+
+        stats[this.id] = stats["NewUser"];
+        delete stats["NewUser"];
+
+        // update the stats.json file
+        fs.writeFile("stats.json", JSON.stringify(stats, null, 2), function writeJSON(err) {
+            if (err)
+                Utils.logMessage("(Error) Could not update stats.json.");
+        });
+    }
+
     // check if user is opped
     isOpped() {
         // create opped users list
