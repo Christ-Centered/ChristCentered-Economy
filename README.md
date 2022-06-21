@@ -6,4 +6,5 @@ ChristCentered Economy bot
 
 ### Developers
 - Yochran
+- Astro
 - Maddee
