@@ -1,4 +1,4 @@
-// exports
+// classes
 class CommandManager {
     // initialize the command list
     static initializeCommands(commandsList, commandFiles) {
