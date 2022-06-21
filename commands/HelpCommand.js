@@ -97,7 +97,7 @@ const functions = {
         switch (selection) {
             case "commands":
                 embed.args["title"] = "-- Commands";
-                embed.args["description"] = "```yaml\n!helpdev: Send the help message\n```";
+                embed.args["description"] = "```yaml\n!helpdev: Send the help message\n!shop: View the shop\n!stats: View a user's stats\n```";
                 break;
             case "stats":
                 embed.args["title"] = "-- Stats";

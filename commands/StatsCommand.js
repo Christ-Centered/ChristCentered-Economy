@@ -16,33 +16,43 @@ const functions = {
         const authorProfile = new User(msg.author.id);
         if (!authorProfile.isOpped()) return;
 
+        var user;
+
         // check argument length
-        if (args.length !== 1) {
-            embed.args["description"] = "Incorrect Usage! `!stats <user>`";
-            msg.channel.send({ embeds: [embed.get()] });
-            return;
-        }
+        if (args.length == 1) user = msg.mentions.members.first();
+        else user = msg.author;
 
         // check if argument is a mention
-        if (!msg.mentions.members.first()) {
+        if (!user) {
             embed.args["description"] = "User must be a mention!";
             msg.channel.send({ embeds: [embed.get()] });
             return;
         }
 
         // create user profile
-        const user = msg.mentions.members.first();
         const userProfile = new User(user.id);
 
         // check for initialization
         if (!userProfile.isInitialized())
             userProfile.initialize();
 
+        embed.args["description"] = "(<@" + user.id + ">)"
+
         // get users coins
         const coins = userProfile.getCoins();
+        const streak = userProfile.getDailyStreak();
+        const bankAccount = userProfile.getBankAccount();
+        const netWorth = userProfile.getNetWorth();
+        const items = userProfile.getItems();
 
         // create & send the message
-        embed.args["description"] = "<@" + user.id + "> has " + coins + " coins.";
+        embed.args["fields"] = [
+            {name: "Coins", value: "`" + coins + "` :coin:", inline: true},
+            {name: "Streak", value: "`" + streak + "`", inline: true},
+            {name: "Bank Account", value: "`" + bankAccount + "` :coin:", inline: true},
+            {name: "Net Worth", value: "`" + netWorth + "` :coin:", inline: true},
+            {name: "Items", value: "`Under Development`", inline: true},
+        ];
 
         msg.channel.send({ embeds: [embed.get()] });
     }

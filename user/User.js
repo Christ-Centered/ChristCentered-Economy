@@ -14,6 +14,9 @@ class User {
         this.id = id;
     }
 
+    // get the user's id
+    getId() { return this.id; }
+
     // checks if user is initialized
     isInitialized() {
         const exists = stats[this.id];
@@ -26,7 +29,12 @@ class User {
     initialize() {
         // setup temp profile
         stats.NewUser = {
-            Coins: 0
+            Coins: 0,
+            DailyStreak: 0,
+            BankAccount: 0,
+            NetWorth: 0,
+            Job: false,
+            Items: []
         };
 
         stats[this.id] = stats["NewUser"];
@@ -57,9 +65,39 @@ class User {
         return userStats.Coins;
     }
 
-    // set user's amount of coins
-    setCoins(amount) {
-        stats[this.id].Coins = amount;
+    // get user's daily streak
+    getDailyStreak() {
+        const userStats = this.getStats();
+        return userStats.DailyStreak;
+    }
+
+    // get user's bank account value
+    getBankAccount() {
+        const userStats = this.getStats();
+        return userStats.BankAccount;
+    }
+
+    // get user's net worth
+    getNetWorth() {
+        const userStats = this.getStats();
+        return userStats.NetWorth;
+    }
+
+    // get user's items
+    getItems() {
+        const userStats = this.getStats();
+        return userStats.Items;
+    }
+
+    // check if user has a job
+    hasJob() {
+        const userStats = this.getStats();
+        return userStats.Job == true;
+    }
+
+    // edit a user's stats
+    setValue(key, value) {
+        stats[this.id][key] = value;
 
         // update the stats.json file
         fs.writeFile("stats.json", JSON.stringify(stats, null, 2), function writeJSON(err) {

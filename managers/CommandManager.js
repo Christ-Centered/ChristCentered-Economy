@@ -1,7 +1,12 @@
+// require
+const { Collection } = require("discord.js");
+
+const commandsList = new Collection();
+
 // classes
 class CommandManager {
     // initialize the command list
-    static initializeCommands(commandsList, commandFiles) {
+    static initializeCommands(commandFiles) {
         // loop through the files
         for (const file of commandFiles) {
             // add the file's name and file to the list
@@ -9,9 +14,12 @@ class CommandManager {
             commandsList.set(command.name, command);
         }
     }
+
+    // get the list of commands
+    static getCommands() { return commandsList; }
     
     // find a command by name or alias from the command list
-    static getCommand(commandsList, name) {
+    static getCommand(name) {
         // create command variable
         var command = commandsList.get(name);
 

@@ -29,6 +29,7 @@ const functions = {
             {label: "Food", value: "food", description: "Show the food page"},
             {label: "Roles", value: "roles", description: "Show the roles page"},
             {label: "Permissions", value: "permissions", description: "Show the permissions page"},
+            {label: "Items", value: "items", description: "Show the items page"}
         ]);
 
         const dropdown = new MessageActionRow().addComponents(selection);
@@ -72,6 +73,12 @@ const functions = {
                 embed.args["fields"] = [
                     {name: "Media+ - :coin: 27500", value: "`010`", inline: false},
                     {name: "GIF PERMS - :coin: 36000", value: "`011`", inline: false}
+                ];
+                break;
+            case "items":
+                embed.args["description"] = "Use `!shop <item name>` or `!shop <item id>` to get more details about an item. Use `!buy <item name>` or `!buy <item id>` to buy an item.\n\n:coin: **Here are our items:**";
+                embed.args["fields"] = [
+                    {name: "Under Development", value: "`//`", inline: false}
                 ];
                 break;
         }
