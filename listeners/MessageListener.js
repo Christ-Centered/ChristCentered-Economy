@@ -34,7 +34,7 @@ const functions = {
         const username = msg.author.username;
 
         // get the command
-        const command = CommandManager.getCommands().get(commandName);
+        const command = CommandManager.getCommand(commandName);
 
         // check if command is null
         if (!command) return;
