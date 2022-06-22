@@ -1,6 +1,7 @@
 // require
 const config = require("../config.json");
 const stats = require("../stats.json");
+const shop = require("../shop.json");
 
 const Utils = require("../utils/Utils.js");
 
@@ -11,6 +12,7 @@ const functions = {
         switch (name) {
             case "config.json": return config; 
             case "stats.json": return stats;
+            case "shop.json": return shop;
         }
 
         Utils.logMessage("(Error) Invalid config name entered.");

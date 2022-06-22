@@ -53,7 +53,7 @@ class User {
         delete stats["NewUser"];
 
         // update the stats.json file
-        fs.writeFile("stats.json", JSON.stringify(stats, null, 2), function writeJSON(err) {
+        fs.writeFileSync("stats.json", JSON.stringify(stats, null, 2), function writeJSON(err) {
             if (err)
                 Utils.logMessage("(Error) Could not update stats.json.");
         });
@@ -109,10 +109,10 @@ class User {
 
     // edit a user's stats
     setValue(key, value) {
-        this.getStats()[key.toUpperCase()] = value;
+        stats[this.getId()][key.toUpperCase()] = value;
 
         // update the stats.json file
-        fs.writeFile("stats.json", JSON.stringify(stats, null, 2), function writeJSON(err) {
+        fs.writeFileSync("stats.json", JSON.stringify(stats, null, 2), function writeJSON(err) {
             if (err)
                 Utils.logMessage("(Error) Could not update stats.json.");
         });

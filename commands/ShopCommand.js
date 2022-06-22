@@ -52,27 +52,25 @@ const functions = {
             case "food":
                 embed.args["description"] = "Use `!shop <item name>` or `!shop <item id>` to get more details about an item. Use `!buy <item name>` or `!buy <item id>` to buy an item.\n\n:coin: **Here are our food items:**";
                 embed.args["fields"] = [
-                    {name: "Coconut - :coin: 50", value: "`01`", inline: false},
-                    {name: "Banana - :coin: 100", value: "`02`", inline: false},
-                    {name: "Pizza - :coin: 100", value: "`03`", inline: false}
+                    {name: "Coconut - :coin: 50", value: "`1`", inline: false},
+                    {name: "Banana - :coin: 100", value: "`2`", inline: false},
+                    {name: "Pizza - :coin: 100", value: "`3`", inline: false}
                 ];
                 break;
             case "roles":
                 embed.args["description"] = "Use `!shop <item name>` or `!shop <item id>` to get more details about an item. Use `!buy <item name>` or `!buy <item id>` to buy an item.\n\n:coin: **Here are our roles:**";
                 embed.args["fields"] = [
-                    {name: "Hadith Rejector Role - :coin: 50", value: "`04`", inline: false},
-                    {name: "Religion Enjoyer Role - :coin: 100", value: "`05`", inline: false},
-                    {name: "Gold Role - :coin: 500", value: "`06`", inline: false},
-                    {name: "Active User Role - :coin: 4000", value: "`07`", inline: false},
-                    {name: "Veteran User Role - :coin: 9500", value: "`08`", inline: false},
-                    {name: "Legend role - :coin: 55000", value: "`09`", inline: false}
+                    {name: "Hadith Rejector Role - :coin: 50", value: "`4`", inline: false},
+                    {name: "Active User Role - :coin: 4000", value: "`5`", inline: false},
+                    {name: "Veteran User Role - :coin: 9500", value: "`6`", inline: false},
+                    {name: "Legend role - :coin: 55000", value: "`7`", inline: false}
                 ];
                 break;
             case "permissions":
                 embed.args["description"] = "Use `!shop <item name>` or `!shop <item id>` to get more details about an item. Use `!buy <item name>` or `!buy <item id>` to buy an item.\n\n:coin: **Here are our permissions:**";
                 embed.args["fields"] = [
-                    {name: "Media+ - :coin: 27500", value: "`010`", inline: false},
-                    {name: "GIF PERMS - :coin: 36000", value: "`011`", inline: false}
+                    {name: "Media+ - :coin: 27500", value: "`8`", inline: false},
+                    {name: "GIF PERMS - :coin: 80000", value: "`9`", inline: false}
                 ];
                 break;
             case "items":
