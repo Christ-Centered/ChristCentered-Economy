@@ -50,7 +50,7 @@ const functions = {
         }
 
         // give the user the job
-        user.setValue("Job", true);
+        user.setValue("JOB", true);
 
         // send the message
         embed.args["description"] = "You now have a job. Type `!work claim` to claim your first paycheck.";
@@ -102,7 +102,7 @@ const functions = {
 
         // give the user that number
         const currentCoins = user.getCoins();
-        user.setValue("Coins", currentCoins + coins);
+        user.setValue("COINS", currentCoins + coins);
 
         // send the message
         embed.args["description"] = "You have claimed your paycheck for " + coins + " :coin:! Come back in 1.5 hours to work again.";

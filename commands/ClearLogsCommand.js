@@ -1,6 +1,4 @@
 // require
-const fs = require("fs");
-
 const Utils = require("../utils/Utils.js");
 const CustomEmbed = require("../utils/CustomEmbed.js");
 

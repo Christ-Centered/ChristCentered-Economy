@@ -8,6 +8,15 @@ const fs = require("fs");
 const config = Config.getConfig("config.json");
 const stats = Config.getConfig("stats.json");
 
+// list of valid keys
+const validKeys = [
+    "COINS",
+    "STREAK",
+    "BANK",
+    "NETWORTH",
+    "JOB"
+];
+
 // classes
 class User {
     constructor(id) {
@@ -16,6 +25,9 @@ class User {
 
     // get the user's id
     getId() { return this.id; }
+
+    // check if an inputted key exists
+    static keyExists(key) { return validKeys.includes(key.toUpperCase()); }
 
     // checks if user is initialized
     isInitialized() {
@@ -29,12 +41,12 @@ class User {
     initialize() {
         // setup temp profile
         stats.NewUser = {
-            Coins: 0,
-            DailyStreak: 0,
-            BankAccount: 0,
-            NetWorth: 0,
-            Job: false,
-            Items: []
+            COINS: 0,
+            STREAK: 0,
+            BANK: 0,
+            NETWORTH: 0,
+            JOB: false,
+            ITEMS: []
         };
 
         stats[this.id] = stats["NewUser"];
@@ -62,42 +74,42 @@ class User {
     // get user's amount of coins
     getCoins() {
         const userStats = this.getStats();
-        return userStats.Coins;
+        return userStats.COINS;
     }
 
     // get user's daily streak
-    getDailyStreak() {
+    getStreak() {
         const userStats = this.getStats();
-        return userStats.DailyStreak;
+        return userStats.STREAK;
     }
 
     // get user's bank account value
     getBankAccount() {
         const userStats = this.getStats();
-        return userStats.BankAccount;
+        return userStats.BANK;
     }
 
     // get user's net worth
     getNetWorth() {
         const userStats = this.getStats();
-        return userStats.NetWorth;
+        return userStats.NETWORTH;
     }
 
     // get user's items
     getItems() {
         const userStats = this.getStats();
-        return userStats.Items;
+        return userStats.ITEMS;
     }
 
     // check if user has a job
     hasJob() {
         const userStats = this.getStats();
-        return userStats.Job == true;
+        return userStats.JOB == true;
     }
 
     // edit a user's stats
     setValue(key, value) {
-        stats[this.id][key] = value;
+        this.getStats()[key.toUpperCase()] = value;
 
         // update the stats.json file
         fs.writeFile("stats.json", JSON.stringify(stats, null, 2), function writeJSON(err) {

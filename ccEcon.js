@@ -33,7 +33,7 @@ client.once("ready", () => {
     };
 
     client.user.setPresence(presence);
-    
+
     // loop setting the status message
     setInterval(() => client.user.setPresence(presence), 5000 * 60);
 
@@ -50,3 +50,8 @@ client.on("interactionCreate", async (interaction) => ListenerManager.getListene
 // log in the bot
 const token = Config.getConfig("config.json").Token;
 client.login(token);
+
+// variable tester
+// client.on("message", (msg) => {
+//
+// })

@@ -40,7 +40,7 @@ const functions = {
 
         // get users coins
         const coins = userProfile.getCoins();
-        const streak = userProfile.getDailyStreak();
+        const streak = userProfile.getStreak();
         const bankAccount = userProfile.getBankAccount();
         const netWorth = userProfile.getNetWorth();
         const items = userProfile.getItems();

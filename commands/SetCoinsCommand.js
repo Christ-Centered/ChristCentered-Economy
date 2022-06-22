@@ -49,7 +49,7 @@ const functions = {
             userProfile.initialize();
 
         // set the users new coins value
-        userProfile.setValue("Coins", parseInt(amount));
+        userProfile.setValue("COINS", parseInt(amount));
 
         // create & send message
         embed.args["description"] = "Set <@" + user.id + ">'s coins to " + amount + ".";
