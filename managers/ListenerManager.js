@@ -21,7 +21,7 @@ class ListenerManager {
     // find a listener by name
     static getListener(name) {
         // create listener variable
-        var listener = listenerList.get(name);
+        var listener = this.getListeners().get(name);
 
         // return the listener
         return listener;

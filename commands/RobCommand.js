@@ -77,7 +77,7 @@ const functions = {
         setTimeout(() => cooldown.delete(msg.author.id), cooldownLength);
 
         // get the chance of success
-        const chance = Math.random() * 100;
+        const chance = Utils.getRandomNumber(100);
 
         // if caught
         if (chance < 50) {

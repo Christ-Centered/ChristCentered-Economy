@@ -65,6 +65,11 @@ const functions = {
         }
 
         return embed;
+    },
+
+    getRandomNumber: function(highest) {
+        const number = Math.floor(Math.random() * highest) + 1;
+        return number;
     }
 }
 

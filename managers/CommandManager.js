@@ -21,7 +21,7 @@ class CommandManager {
     // find a command by name or alias from the command list
     static getCommand(name) {
         // create command variable
-        var command = commandsList.get(name);
+        var command = this.getCommands().get(name);
 
         // if not found with the name, check for alias
         if (!command) {
