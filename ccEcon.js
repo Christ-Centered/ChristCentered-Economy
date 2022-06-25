@@ -54,11 +54,14 @@ client.once("ready", () => {
     Utils.logMessage("ChristCentered Economy v1.0 has successfully loaded.");
 });
 
-// message listener
-client.on("messageCreate", (msg) => ListenerManager.getListeners().get("MessageListener").Trigger(msg));
+// command listener
+client.on("messageCreate", (msg) => ListenerManager.getListener("MessageListener").Trigger(msg));
+
+// game listener
+client.on("messageCreate", (msg) => ListenerManager.getListener("GameListener").Trigger(msg));
 
 // dropdown interaction listener
-client.on("interactionCreate", async (interaction) => ListenerManager.getListeners().get("InteractionListener").Trigger(interaction));
+client.on("interactionCreate", async (interaction) => ListenerManager.getListener("InteractionListener").Trigger(interaction));
 
 // log in the bot
 const token = Config.getConfig("config.json").Token;
