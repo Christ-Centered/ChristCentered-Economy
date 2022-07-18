@@ -1,0 +1,94 @@
+-- Logs: --
+(5/2/2022, 22:5) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(5/2/2022, 22:5) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(5/2/2022, 22:5) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: help
+(5/2/2022, 22:5) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: shop
+(5/2/2022, 22:5) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(5/2/2022, 22:6) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: user
+(5/2/2022, 22:6) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: withdraw
+(5/2/2022, 22:6) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: buy
+(5/2/2022, 22:6) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: buy
+(6/2/2022, 23:54) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/2/2022, 23:54) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/2/2022, 23:54) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/2/2022, 23:54) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: withdraw
+(6/2/2022, 23:54) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: shop
+(6/2/2022, 23:54) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: buy
+(6/2/2022, 23:54) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: helpecon
+(6/2/2022, 23:54) [ChristCentered Economy]: [Christ Centered | Christianity], astro. has run a command: helpecon
+(6/2/2022, 23:58) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/2/2022, 23:58) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/2/2022, 23:58) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: gray
+(6/3/2022, 2:44) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/3/2022, 2:44) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/3/2022, 2:44) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/3/2022, 2:44) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: withdraw
+(6/3/2022, 2:44) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: shop
+(6/3/2022, 2:44) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: buy
+(6/3/2022, 2:47) [ChristCentered Economy]: [Christ Centered | Christianity], Noodle has run a command: shop
+(6/3/2022, 2:47) [ChristCentered Economy]: [Christ Centered | Christianity], Noodle has run a command: shop
+(6/6/2022, 10:42) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/6/2022, 10:42) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/6/2022, 10:42) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: setcoins
+(6/6/2022, 10:42) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/6/2022, 10:43) [ChristCentered Economy]: [Christ Centered | Christianity], NŪN_RITĀ| |ܪܝܬܲܐ has run a command: stats
+(6/0/2022, 21:18) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:18) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:18) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:19) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:19) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:19) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:19) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:19) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:19) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:19) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: disable
+(6/0/2022, 21:19) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:19) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: disable
+(6/0/2022, 21:19) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: enable
+(6/0/2022, 21:20) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:20) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:20) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:21) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: disable
+(6/0/2022, 21:21) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:21) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: enable
+(6/0/2022, 21:21) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: disable
+(6/0/2022, 21:22) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:22) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:22) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:22) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: enable
+(6/0/2022, 21:22) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: disable
+(6/0/2022, 21:22) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:22) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:22) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:22) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:22) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: disable
+(6/0/2022, 21:22) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:22) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: enable
+(6/0/2022, 21:24) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:24) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:24) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:24) [ChristCentered Economy]: [Christ Centered | Christianity], Augustine has run a command: coins
+(6/0/2022, 21:24) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: disable
+(6/0/2022, 21:24) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:24) [ChristCentered Economy]: [Christ Centered | Christianity], Augustine has run a command: shop
+(6/0/2022, 21:25) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:25) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:25) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:26) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:26) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:27) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:27) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:27) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: enable
+(6/0/2022, 21:27) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:28) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:28) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:28) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:28) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: disable
+(6/0/2022, 21:28) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: enable
+(6/0/2022, 21:28) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:28) [ChristCentered Economy]: ChristCentered Economy v1.0 is loading...
+(6/0/2022, 21:28) [ChristCentered Economy]: ChristCentered Economy v1.0 has successfully loaded.
+(6/0/2022, 21:28) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats
+(6/0/2022, 21:28) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: disable
+(6/0/2022, 21:28) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: enable
+(6/0/2022, 21:28) [ChristCentered Economy]: [Christ Centered | Christianity], Yochran has run a command: stats

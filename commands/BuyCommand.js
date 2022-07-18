@@ -5,9 +5,6 @@ const User = require("../user/User.js");
 const Shop = require("../shop/Shop.js");
 const Config = require("../config/Config.js");
 
-// define config files
-const shop = Config.getConfig("shop.json");
-
 // functions
 const functions = {
     name: "buy",

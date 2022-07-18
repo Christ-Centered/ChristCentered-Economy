@@ -1,0 +1,80 @@
+{
+    "1" : {
+        "ID": 1,
+        "NAME": "Coconut",
+        "PRICE": 50,
+        "FUNCTION": {
+            "TYPE": "FOOD"
+        }
+    },
+    "2" : {
+        "ID": 2,
+        "NAME": "Banana",
+        "PRICE": 100,
+        "FUNCTION": {
+            "TYPE": "FOOD"
+        }
+    },
+    "3" : {
+        "ID": 3,
+        "NAME": "Pizza",
+        "PRICE": 100,
+        "FUNCTION": {
+            "TYPE": "FOOD"
+        }
+    },
+    "4" : {
+        "ID": 4,
+        "NAME": "Hadith Rejector Role",
+        "PRICE": 50,
+        "FUNCTION": {
+            "TYPE": "ROLE",
+            "ROLEID": "891044089192132711"
+        }
+    },
+    "5" : {
+        "ID": 5,
+        "NAME": "Active User Role",
+        "PRICE": 4000,
+        "FUNCTION": {
+            "TYPE": "ROLE",
+            "ROLEID": "870959562415546408"
+        }
+    },
+    "6" : {
+        "ID": 6,
+        "NAME": "Veteran User Role",
+        "PRICE": 9500,
+        "FUNCTION": {
+            "TYPE": "ROLE",
+            "ROLEID": "870966627171184671"
+        }
+    },
+    "7" : {
+        "ID": 7,
+        "NAME": "Legend Role",
+        "PRICE": 55000,
+        "FUNCTION": {
+            "TYPE": "ROLE",
+            "ROLEID": "870965114457706546"
+        }
+    },
+    "8" : {
+        "ID": 8,
+        "NAME": "Media+",
+        "PRICE": 27500,
+        "FUNCTION": {
+            "TYPE": "ROLE",
+            "ROLEID": "919852767579897887"
+        }
+    },
+    "9" : {
+        "ID": 9,
+        "NAME": "GIF PERMS",
+        "PRICE": 80000,
+        "FUNCTION": {
+            "TYPE": "ROLE",
+            "ROLEID": "930734267909152838"
+        }
+    }
+}

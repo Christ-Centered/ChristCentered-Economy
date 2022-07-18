@@ -1,6 +1,7 @@
 // require
 const Utils = require("../utils/Utils.js");
 const Config = require("../config/Config.js");
+const CustomEmbed = require("../utils/CustomEmbed.js");
 
 const CommandManager = require("../managers/CommandManager.js");
 
@@ -38,6 +39,20 @@ const functions = {
 
         // check if command is null
         if (!command) return;
+
+        // execute the command
+        if (config.Disabled) {
+            if (command.name !== "enable" && command.name !== "disable") {
+                // create embed
+                const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());
+                embed.args["description"] = "(:x:) Bot is currently disabled";
+
+                // send the embed
+                msg.channel.send({ embeds: [embed.get()] });
+
+                return;
+            }
+        }
 
         // execute the command
         command.Execute(msg, args);
