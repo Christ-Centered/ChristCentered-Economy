@@ -10,7 +10,7 @@ class CommandManager {
         // loop through the files
         for (const file of commandFiles) {
             // add the file's name and file to the list
-            const command = require(`../commands/` + file);
+            const command = require(`${process.cwd()}/commands/` + file);
             commandsList.set(command.name, command);
         }
     }

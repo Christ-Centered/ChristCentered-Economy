@@ -1,10 +1,10 @@
 // require
-const Utils = require("../utils/Utils.js");
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
 
-const CollectionManager = require("../managers/CollectionManager.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
+const CollectionManager = require(`${process.cwd()}/managers/CollectionManager.js`);
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
 
-const GuessTheNumber = require("../games/minigames/GuessTheNumber.js");
+const GuessTheNumber = require(`${process.cwd()}/games/minigames/GuessTheNumber.js`);
 
 // functions
 const functions = {

@@ -1,5 +1,5 @@
 // require
-const ShopCommand = require("../commands/ShopCommand.js");
+const ShopCommand = require(`${process.cwd()}/commands/ShopCommand.js`);
 
 // functions
 const functions = {

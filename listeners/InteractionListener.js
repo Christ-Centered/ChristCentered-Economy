@@ -1,8 +1,8 @@
 // require
-const HelpDropdown = require("../interactions/HelpDropdown.js");
-const ShopDropdown = require("../interactions/ShopDropdown.js");
-const ClearLogsDropdown = require("../interactions/ClearLogsDropdown.js");
-const ClearUserDropdown = require("../interactions/ClearUserDropdown.js");
+const HelpDropdown = require(`${process.cwd()}/interactions/HelpDropdown.js`);
+const ShopDropdown = require(`${process.cwd()}/interactions/ShopDropdown.js`);
+const ClearLogsDropdown = require(`${process.cwd()}/interactions/ClearLogsDropdown.js`);
+const ClearUserDropdown = require(`${process.cwd()}/interactions/ClearUserDropdown.js`);
 
 // functions
 const functions = {

@@ -1,11 +1,8 @@
 // require
-const Config = require("../config/Config.js");
-const fs = require("fs");
-const Utils = require("../utils/Utils.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
-
-// creat the config
-const config = Config.getConfig("config.json");
+const fs = require(`fs`);
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
+const config = require(`${process.cwd()}/config.json`);
 
 // functions
 const functions = {

@@ -1,8 +1,8 @@
 // require
-const Utils = require("../utils/Utils.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
-const User = require("../user/User.js");
-const CollectionManager = require("../managers/CollectionManager.js");
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
+const User = require(`${process.cwd()}/user/User.js`);
+const CollectionManager = require(`${process.cwd()}/managers/CollectionManager.js`);
 
 // functions
 const functions = {
@@ -11,7 +11,10 @@ const functions = {
     Execute(msg, args) {
         // check if author is opped
         const authorProfile = new User(msg.author.id);
-        if (!authorProfile.isOpped()) return;
+
+        // check for initialization
+        if (!authorProfile.isInitialized())
+            authorProfile.initialize();
 
         // create the embed
         const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());

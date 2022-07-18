@@ -1,9 +1,9 @@
 // require
-const Utils = require("../utils/Utils.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
-const TimeUtils = require("../utils/TimeUtils.js");
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
+const TimeUtils = require(`${process.cwd()}/utils/TimeUtils.js`);
 
-const User = require("../user/User.js");
+const User = require(`${process.cwd()}/user/User.js`);
 
 const { Collection } = require("discord.js");
 
@@ -17,7 +17,10 @@ const functions = {
     Execute(msg, args) {
         // check if author is opped
         const user = new User(msg.author.id);
-        if (!user.isOpped()) return;
+
+        // check for initialization
+        if (!user.isInitialized())
+            user.initialize();
 
         // create the embed
         const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());

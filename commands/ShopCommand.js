@@ -1,9 +1,9 @@
 // require
-const Utils = require("../utils/Utils.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
-const User = require("../user/User.js");
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
+const User = require(`${process.cwd()}/user/User.js`);
 
-const { MessageActionRow, MessageSelectMenu } = require("discord.js");
+const { MessageActionRow, MessageSelectMenu } = require(`discord.js`);
 
 // functions
 const functions = {
@@ -12,9 +12,6 @@ const functions = {
     Execute(msg, args) {
         // create author user profile
         const authorProfile = new User(msg.author.id);
-
-        // check if author has permission
-        if (!authorProfile.isOpped()) return;
 
         // create the message hub embed
         const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());

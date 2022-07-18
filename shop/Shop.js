@@ -1,10 +1,7 @@
 // require
-const Config = require("../config/Config.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
-const Utils = require("../utils/Utils.js");
-
-// define config files
-const shop = Config.getConfig("shop.json");
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
+const shop = require(`${process.cwd()}/shop.json`);
 
 // classes
 class Shop {

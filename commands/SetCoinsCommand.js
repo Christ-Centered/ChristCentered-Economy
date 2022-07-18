@@ -1,8 +1,8 @@
 // require
-const User = require("../user/User.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
+const User = require(`${process.cwd()}/user/User.js`);
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
 
-const Utils = require("../utils/Utils.js");
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
 
 // functions
 const functions = {

@@ -10,7 +10,7 @@ class GameManager {
         // loop through the files
         for (const file of gameFiles) {
             // add the file's name and file to the list
-            const runnable = require(`../games/minigames/` + file);
+            const runnable = require(`${process.cwd()}/games/minigames/` + file);
             gameList.set(runnable.name, runnable);
         }
     }

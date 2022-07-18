@@ -1,6 +1,6 @@
 // require
-const CollectionManager = require("../managers/CollectionManager.js");
-const Game = require("../games/Game.js");
+const CollectionManager = require(`${process.cwd()}/managers/CollectionManager.js`);
+const Game = require(`${process.cwd()}/games/Game.js`);
 
 // runnables
 const runnables = {

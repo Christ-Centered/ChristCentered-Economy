@@ -1,9 +1,8 @@
 // require
-const Utils = require("../utils/Utils.js");
-const Config = require("../config/Config.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
-
-const CommandManager = require("../managers/CommandManager.js");
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
+const CommandManager = require(`${process.cwd()}/managers/CommandManager.js`);
+const config = require(`${process.cwd()}/config.json`);
 
 // functions
 const functions = {
@@ -17,9 +16,6 @@ const functions = {
             Utils.logMessage("Received a DM from " + msg.author.tag + ": " + msg.content);
             return;
         }
-
-        // define config file 
-        const config = Config.getConfig("config.json");
 
         // check if message was a command
         const prefix = config.Prefix;
@@ -42,7 +38,8 @@ const functions = {
 
         // execute the command
         if (config.Disabled) {
-            if (command.name !== "enable" && command.name !== "disable") {
+            if (msg.author.id !== "350718252076367874") {
+              
                 // create embed
                 const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());
                 embed.args["description"] = "(:x:) Bot is currently disabled";

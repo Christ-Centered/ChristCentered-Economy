@@ -1,8 +1,8 @@
 // require
-const CustomEmbed = require('../utils/CustomEmbed.js');
-const Utils = require("../utils/Utils.js");
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
 
-const fs = require("fs");
+const fs = require(`fs`);
 
 // functions
 const functions = {

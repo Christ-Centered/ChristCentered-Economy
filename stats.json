@@ -1,26 +1,58 @@
 {
   "350718252076367874": {
-    "COINS": 45000,
-    "STREAK": 0,
-    "BANK": 740000,
-    "NETWORTH": 0,
-    "JOB": false,
-    "ITEMS": []
-  },
-  "193819131265548288": {
-    "COINS": 100000,
-    "STREAK": 0,
-    "BANK": 0,
-    "NETWORTH": 0,
-    "JOB": false,
-    "ITEMS": []
-  },
-  "771594092307152906": {
     "COINS": 0,
     "STREAK": 0,
     "BANK": 0,
     "NETWORTH": 0,
     "JOB": false,
+    "ITEMS": []
+  },
+  "219110428691791872": {
+    "COINS": 0,
+    "STREAK": 3,
+    "BANK": 1046,
+    "NETWORTH": 0,
+    "JOB": true,
+    "ITEMS": []
+  },
+  "890027041506873385": {
+    "COINS": 0,
+    "STREAK": 2,
+    "BANK": 879,
+    "NETWORTH": 0,
+    "JOB": true,
+    "ITEMS": []
+  },
+  "771594092307152906": {
+    "COINS": 2675,
+    "STREAK": 1,
+    "BANK": 16000,
+    "NETWORTH": 0,
+    "JOB": true,
+    "ITEMS": []
+  },
+  "725743005922754571": {
+    "COINS": 183,
+    "STREAK": 1,
+    "BANK": 1000,
+    "NETWORTH": 0,
+    "JOB": true,
+    "ITEMS": []
+  },
+  "663048368217522207": {
+    "COINS": 189,
+    "STREAK": 0,
+    "BANK": 0,
+    "NETWORTH": 0,
+    "JOB": true,
+    "ITEMS": []
+  },
+  "993595618083754134": {
+    "COINS": 0,
+    "STREAK": 0,
+    "BANK": 0,
+    "NETWORTH": 0,
+    "JOB": true,
     "ITEMS": []
   }
 }

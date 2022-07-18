@@ -1,12 +1,8 @@
 // require
-const Config = require("../config/Config.js");
-const Utils = require("../utils/Utils.js");
-
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
 const fs = require("fs");
-
-// define config files
-const config = Config.getConfig("config.json");
-const stats = Config.getConfig("stats.json");
+const config = require(`${process.cwd()}/config.json`);
+const stats = require(`${process.cwd()}/stats.json`);
 
 // list of valid keys
 const validKeys = [

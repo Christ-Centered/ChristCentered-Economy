@@ -1,9 +1,9 @@
 // require
-const CustomEmbed = require('../utils/CustomEmbed.js');
-const Utils = require("../utils/Utils.js");
-const User = require("../user/User.js");
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
+const User = require(`${process.cwd()}/user/User.js`);
 
-const CollectionManager = require("../managers/CollectionManager.js");
+const CollectionManager = require(`${process.cwd()}/managers/CollectionManager.js`);
 
 // functions
 const functions = {

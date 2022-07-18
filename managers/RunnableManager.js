@@ -10,7 +10,7 @@ class RunnableManager {
         // loop through the files
         for (const file of runnableFiles) {
             // add the file's name and file to the list
-            const runnable = require(`../runnables/` + file);
+            const runnable = require(`${process.cwd()}/runnables/` + file);
             runnableList.set(runnable.name, runnable);
         }
     }

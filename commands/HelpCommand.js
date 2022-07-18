@@ -1,12 +1,12 @@
 //require
-const { MessageActionRow, MessageSelectMenu } = require("discord.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
+const { MessageActionRow, MessageSelectMenu } = require(`discord.js`);
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
 
-const Utils = require("../utils/Utils.js");
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
 
 // functions
 const functions = {
-    name: "help",
+    name: "ehelp",
     alias: ["helpecon"],
     Execute(msg, args) {
         // check the argument length & return the proper version of the command
@@ -97,7 +97,7 @@ const functions = {
         switch (selection) {
             case "commands":
                 embed.args["title"] = "-- Commands";
-                embed.args["description"] = "```yaml\n!helpdev: Send the help message\n!shop: View the shop\n!stats: View a user's stats\n```";
+                embed.args["description"] = "```yaml\n!ehelp: Send the help message\n!shop: View the shop\n!stats: View a user's stats\n!buy: Buy an item from the shop\n!daily: Get your daily reward\n!deposit: Deposit money into your bank\n!economy-info: View the economy info\n!rob: Rob a user\n!withdraw: Withdraw money from your bank account\n!work: Claim your work paycheck```";
                 break;
             case "stats":
                 embed.args["title"] = "-- Stats";

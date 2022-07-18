@@ -1,5 +1,5 @@
 // require
-const HelpCommand = require("../commands/HelpCommand.js");
+const HelpCommand = require(`${process.cwd()}/commands/HelpCommand.js`);
 
 // functions
 const functions = {

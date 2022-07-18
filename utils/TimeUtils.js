@@ -1,5 +1,3 @@
-// require
-
 // functions
 const functions = {
     getTimeStr: function(ms) {

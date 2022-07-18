@@ -1,9 +1,8 @@
 // require
-const Utils = require("../utils/Utils.js");
-const CustomEmbed = require("../utils/CustomEmbed.js");
-const User = require("../user/User.js");
-const Shop = require("../shop/Shop.js");
-const Config = require("../config/Config.js");
+const Utils = require(`${process.cwd()}/utils/Utils.js`);
+const CustomEmbed = require(`${process.cwd()}/utils/CustomEmbed.js`);
+const User = require(`${process.cwd()}/user/User.js`);
+const Shop = require(`${process.cwd()}/shop/Shop.js`);
 
 // functions
 const functions = {
@@ -12,7 +11,6 @@ const functions = {
     Execute(msg, args) {
         // check if user is opped
         const userProfile = new User(msg.author.id);
-        if (!userProfile.isOpped()) return;
 
         // create the embed
         const embed = new CustomEmbed(Utils.getDefaultEmbedOptions());

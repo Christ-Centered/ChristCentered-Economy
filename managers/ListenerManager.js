@@ -10,7 +10,7 @@ class ListenerManager {
         // loop through the files
         for (const file of listenerFiles) {
             // add the file's name and file to the list
-            const command = require(`../listeners/` + file);
+            const command = require(`${process.cwd()}/listeners/` + file);
             listenerList.set(command.name, command);
         }
     }

@@ -1,6 +1,6 @@
 // require
-const GameManager = require("../managers/GameManager.js");
-const CollectionManager = require("../managers/CollectionManager.js");
+const GameManager = require(`${process.cwd()}/managers/GameManager.js`);
+const CollectionManager = require(`${process.cwd()}/managers/CollectionManager.js`);
 
 // classes
 class Game {
