@@ -1,5 +1,5 @@
 # ChristCentered-Economy
-ChristCentered Economy bot
+Economy bot for the Christ Centered server. 
 
 ### Language(s)
 - JavaScript (Node)
